@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Double Pendulum Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div id="introPopup">
+        <div id="introContent">
+          <h2>Welcome to the Double Pendulum Simulator</h2>
+          <p>
+            This simulation models a <strong>double pendulum</strong>: two masses connected by rods and governed by nonlinear physics.
+          </p>
+          <p>
+            The system is chaotic — small changes in initial conditions lead to drastically different outcomes.
+          </p>
+          <p>
+            <strong>Math:</strong><br>
+            The motion follows equations derived from Lagrangian mechanics:<br><br>
+            <code>θ₁'' = (complex trig expression involving θ₁, θ₂, ω₁, ω₂)</code><br>
+            <code>θ₂'' = (another coupled nonlinear expression)</code><br><br>
+            We use a <strong>Runge-Kutta (RK4)</strong> method to numerically solve them in real-time.
+          </p>
+          <p>
+            <strong>Controls:</strong><br>
+            - Adjust sliders for mass, length, gravity<br>
+            - Toggle motion trails<br>
+          </p>
+          <button id="startSim">Let's Begin</button>
+        </div>
+      </div>
+
+      
+  <div class="container">
+    <canvas id="pendulumCanvas"></canvas>
+    <div class="controls">
+      <h2>Double Pendulum Controls</h2>
+
+      <div class="control-group">
+        <label for="length1">Length 1</label>
+        <input type="range" id="length1" min="50" max="300" value="200">
+      </div>
+
+      <div class="control-group">
+        <label for="length2">Length 2</label>
+        <input type="range" id="length2" min="50" max="300" value="200">
+      </div>
+
+      <div class="control-group">
+        <label for="mass1">Mass 1</label>
+        <input type="range" id="mass1" min="1" max="10" value="5">
+      </div>
+
+      <div class="control-group">
+        <label for="mass2">Mass 2</label>
+        <input type="range" id="mass2" min="1" max="10" value="5">
+      </div>
+
+      <div class="control-group">
+        <label for="gravity">Gravity</label>
+        <input type="range" id="gravity" min="1" max="20" value="9.8" step="0.1">
+      </div>
+      
+      <div class="control-group">
+        <label>
+          <input type="checkbox" id="traceToggle" />
+          Show Motion Trails
+        </label>
+      </div>
+      
+
+      <button id="reset">Reset & Pull</button>
+
+      <h3>Angle of Pendulum Bobs Over Time</h3>
+      <div style="text-align: center; margin-bottom: 5px;">
+        <small>
+          <span style="color:#00ffff;">θ₁ (Angle 1)</span> |
+          <span style="color:#ff66cc;">θ₂ (Angle 2)</span>
+        </small>
+      </div>
+      
+      
+
+      <canvas id="graphCanvas" width="280" height="120"></canvas>
+
+      <h3>Energy Distribution</h3>
+      <div style="text-align: center; margin-bottom: 5px;">
+        <small>
+          <span style="color:#e63946;">Kinetic Energy</span> |
+          <span style="color:#1d8cf8;">Potential Energy</span>
+        </small>
+      </div>
+      
+<canvas id="energyCanvas" width="280" height="120"></canvas>
+
+
+
+      <div class="output">
+        <h3>Real-Time Output</h3>
+        <p id="angle1">Angle 1: --</p>
+        <p id="angle2">Angle 2: --</p>
+        <p id="energy">Total Energy: --</p>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script src="script.js"></script>
+  <footer id="simFooter">
+    Made with Purpose · Dhruv Kekin Toprani · 2025
+  </footer>
+  
+</body>
+</html>
