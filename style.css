@@ -11,12 +11,13 @@
     background-color: #111;
     color: #f0f0f0;
   }
-  
-  .container {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-  }
+.container {
+  position: relative; /* add this */
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
   
   canvas#pendulumCanvas {
     flex: 1;
@@ -143,5 +144,19 @@
     bottom: 0;
     left: 0;
     z-index: 10;
+  }
+  
+
+  .output-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(30, 30, 30, 0.7);
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.85rem;
+    z-index: 100;
+    pointer-events: none;
   }
   

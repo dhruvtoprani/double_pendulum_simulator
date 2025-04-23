@@ -36,6 +36,13 @@
       
   <div class="container">
     <canvas id="pendulumCanvas"></canvas>
+
+    <div class="output-overlay">
+      <p id="angle1">Angle 1: --</p>
+      <p id="angle2">Angle 2: --</p>
+      <p id="energy">Total Energy: --</p>
+    </div>
+        
     <div class="controls">
       <h2>Double Pendulum Controls</h2>
 
@@ -74,36 +81,32 @@
 
       <button id="reset">Reset & Pull</button>
 
-      <h3>Angle of Pendulum Bobs Over Time</h3>
-      <div style="text-align: center; margin-bottom: 5px;">
-        <small>
-          <span style="color:#00ffff;">θ₁ (Angle 1)</span> |
-          <span style="color:#ff66cc;">θ₂ (Angle 2)</span>
-        </small>
+      <div id="angleGraphSection">
+        <h3>Angle of Bobs Over Time</h3>
+        <div style="text-align: center; margin-bottom: 5px;">
+          <small>
+            <span style="color:#00ffff;">θ₁ (Angle 1)</span> |
+            <span style="color:#ff66cc;">θ₂ (Angle 2)</span>
+          </small>
+        </div>
+        <canvas id="graphCanvas" width="280" height="120"></canvas>
       </div>
       
       
-
-      <canvas id="graphCanvas" width="280" height="120"></canvas>
-
-      <h3>Energy Distribution</h3>
-      <div style="text-align: center; margin-bottom: 5px;">
-        <small>
-          <span style="color:#e63946;">Kinetic Energy</span> |
-          <span style="color:#1d8cf8;">Potential Energy</span>
-        </small>
+      <div id="energyGraphSection">
+        <h3>Energy Distribution</h3>
+        <div style="text-align: center; margin-bottom: 5px;">
+          <small>
+            <span style="color:#e63946;">Kinetic Energy</span> |
+            <span style="color:#1d8cf8;">Potential Energy</span>
+          </small>
+        </div>
+        <canvas id="energyCanvas" width="280" height="120"></canvas>
       </div>
       
-<canvas id="energyCanvas" width="280" height="120"></canvas>
+      
+      <button id="toggleGraphBtn">View Energy Graph</button>
 
-
-
-      <div class="output">
-        <h3>Real-Time Output</h3>
-        <p id="angle1">Angle 1: --</p>
-        <p id="angle2">Angle 2: --</p>
-        <p id="energy">Total Energy: --</p>
-      </div>
     </div>
   </div>
 

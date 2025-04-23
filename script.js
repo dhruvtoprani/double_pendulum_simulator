@@ -202,3 +202,18 @@ const introPopup = document.getElementById("introPopup");
 startSimBtn.addEventListener("click", () => {
   introPopup.style.display = "none";
 });
+
+const toggleBtn = document.getElementById("toggleGraphBtn");
+const angleGraphSection = document.getElementById("angleGraphSection");
+const energyGraphSection = document.getElementById("energyGraphSection");
+
+toggleBtn.addEventListener("click", () => {
+  const isAngleVisible = angleGraphSection.style.display !== "none";
+
+  angleGraphSection.style.display = isAngleVisible ? "none" : "block";
+  energyGraphSection.style.display = isAngleVisible ? "block" : "none";
+  toggleBtn.textContent = isAngleVisible ? "View Angular Graph" : "View Energy Graph";
+});
+
+// Set initial visibility
+energyGraphSection.style.display = "none";
